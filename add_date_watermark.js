@@ -114,11 +114,14 @@ for(j = 0; j < exifData.length; j++ )
         //日期时间
         case photoTimeStr:
             photoTime = exifData[j][1];
+            p = photoTime.split(" ")
+            // 2020:10:11 12:08:33 替换为2020-10-11 12:08:33
+            photoTime_ = p[0].replace(/:/g,"-")+" "+p[1]
             break;
     }
 
 } 
-return photoTime;
+return photoTime_;
 
 }
 
